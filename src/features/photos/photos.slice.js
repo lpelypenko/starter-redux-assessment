@@ -20,7 +20,7 @@ const options = {
     addPhoto: (state, action) => {
       state.photos.unshift({ id: state.photos.length + 1, ...action.payload });
     },
-    removeNote: (state, action) => {
+    removePhoto: (state, action) => {
       state.photos.splice(
         state.photos.findIndex((photo) => photo.id === action.payload),
         1
@@ -38,4 +38,10 @@ export default photosSlice.reducer;
 export const selectAllPhotos = (state) => state.photos.photos;
 export const selectFilteredPhotos = (state) => {
   // Task 12: Complete `selectFilteredPhotos()` selector to return a filtered list of photos whose captions match the user's search term
+  const photos = selectAllPhotos(state);
+  const searchTerm = selectSearchTerm(state);
+
+  return photos.filter((item) =>
+    item.caption.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 };
