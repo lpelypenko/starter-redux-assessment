@@ -4,6 +4,7 @@ import photos from "./photos.data.js";
 
 const initialState = {
   photos,
+  lastId: photos.length,
 };
 
 const options = {
@@ -18,7 +19,8 @@ const options = {
     // Task 6 Hint: You can use state.photos.splice()
     // `splice()` documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     addPhoto: (state, action) => {
-      state.photos.unshift({ id: state.photos.length + 1, ...action.payload });
+      state.lastId = state.lastId + 1;
+      state.photos.unshift({ id: state.lastId, ...action.payload });
     },
     removePhoto: (state, action) => {
       state.photos.splice(
