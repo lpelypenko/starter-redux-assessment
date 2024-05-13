@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Liliia's final result
+
+![ui result](final-result.png)
+
 ## Available scripts
 
 In the project directory, you can run the following commands:
@@ -118,7 +122,3 @@ In the `src/features/suggestion/index.js` file, complete the following tasks:
 - Task 20: Dispatch the `fetchSuggestion()` action creator.
 
 - Task 21: Enable the two JSX lines needed to display the suggestion on the page.
-
-## Final result
-
-![ui result](doggiegram.png)
