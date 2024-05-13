@@ -22,9 +22,7 @@ export default function PhotosList() {
     <li key={id}>
       <img alt={caption} src={imageUrl} />
       <div>
-        <p>
-          {caption} - ID: {id}
-        </p>
+        <p>{caption}</p>
         <button
           data-testid={`${caption}-button`}
           onClick={() => handleDeleteButtonClick(id)}
